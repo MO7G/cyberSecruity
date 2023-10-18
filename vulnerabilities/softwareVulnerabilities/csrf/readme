@@ -1,0 +1,5 @@
+first run npm install 
+
+run the the command npx serve . on the good page and on the evil page directory where it will be the root of the server for each folder
+
+make sure the server have the same localhost of the good page html so you can make the request and not get block by the cros origin policy 
