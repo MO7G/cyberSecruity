@@ -1,5 +1,8 @@
-first run npm install 
+to run the server run it in the root of the folder using the command 
+"npx serve ." 
 
-run the the command npx serve . on the good page and on the evil page directory where it will be the root of the server for each folder
+now once try to run the protectedServer and once try to run the server-vul and be careful to run them both on localhost 3000
 
-make sure the server have the same localhost of the good page html so you can make the request and not get block by the cros origin policy 
+
+don't forget when you run both server try to copy your localhost server which runs the html using the npx serve . and paste to 
+core of the backend server so it can accept your requests!
